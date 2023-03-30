@@ -17,11 +17,13 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.clipPath
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.core.graphics.ColorUtils
 import com.example.domain.model.Note
+import com.example.domain.util.TestTags.NOTE_ITEM
 
 
 @Composable
@@ -34,6 +36,7 @@ fun NoteItem(
 ) {
     Box(
         modifier = modifier
+            .testTag(NOTE_ITEM)
     ) {
         //fillmaxsize는 부모 Box의 크기에 영향을 미친다 따라서 matchParentSize를 사용하여 부모 Box의 크기가 정해지면 그것을 따르도록함
         Canvas(modifier = Modifier.matchParentSize()) {
